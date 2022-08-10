@@ -23,8 +23,9 @@ def load_data(messages_filepath, categories_filepath):
         # set each value to be the last character of the string
         categories[column] = categories[column].str[-1].astype(int)
     df.drop(columns=["categories"], inplace=True)
+    df = pd.concat([df, categories], axis=1, sort=False)
     df["related"] = df["related"].replace(2, 1)
-    return pd.concat([df, categories], axis=1, sort=False)
+    return df
 
 
 def clean_data(df):
