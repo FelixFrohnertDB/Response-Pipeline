@@ -1,5 +1,11 @@
 # Disaster Response Pipeline Project
 
+### Summary:
+This repository constitutes a framework for analyzing messages that were sent during disaster events. 
+Using a supervised learning pipeline, messages are categorized so that they can be forwarded to 
+an appropriate disaster relief agency. 
+
+
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
@@ -12,3 +18,22 @@
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
+
+
+### files in the repository:
+        Disaster-Response-Pipeline
+          |-- app
+                |-- templates
+                        |-- go.html # classification result page of web app
+                        |-- master.html # main page of web app
+                |-- run.py # Flask file that runs app
+          |-- data
+                |-- disaster_categories.csv # data to process
+                |-- disaster_message.csv # data to process 
+                |-- DisasterResponse.db # database to save clean data to
+                |-- process_data.py
+          |-- models
+                |-- classifier.pkl # saved model
+                |-- train_classifier.py
+          |-- README
+
