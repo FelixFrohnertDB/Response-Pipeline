@@ -1,9 +1,9 @@
 # Disaster Response Pipeline Project
 
 ### Summary:
-This repository constitutes a framework for analyzing messages that were sent during disaster events. 
-Using a supervised learning pipeline, messages are categorized so that they can be forwarded to 
-an appropriate disaster relief agency. 
+This repository provides a framework for analyzing messages sent during disaster events. 
+Using a supervised learning pipeline, messages are categorized so that they can be routed to an 
+appropriate disaster relief organization.
 
 
 ### Instructions:
