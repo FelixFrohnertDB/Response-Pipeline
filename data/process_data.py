@@ -23,6 +23,7 @@ def load_data(messages_filepath, categories_filepath):
         # set each value to be the last character of the string
         categories[column] = categories[column].str[-1].astype(int)
     df.drop(columns=["categories"], inplace=True)
+    df["related"] = df["related"].replace(2, 1)
     return pd.concat([df, categories], axis=1, sort=False)
 
 
@@ -35,8 +36,13 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
+    """
+    Saves the cleaned dataframe into a selected folder
+    Input: Dataframe, filepath
+    Returns: None
+    """
     engine = create_engine('sqlite:///{}'.format(database_filename))
-    df.to_sql(database_filename, engine, index=False)
+    df.to_sql(database_filename, engine, index=False, if_exists='replace')
 
 
 def main():
